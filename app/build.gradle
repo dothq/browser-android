@@ -18,7 +18,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -32,14 +32,14 @@ android {
 }
 
 dependencies {
-    implementation "androidx.fragment:fragment-ktx:1.4.0"
-    implementation 'androidx.core:core-ktx:1.7.0'
+    // Kotlin
+    implementation("androidx.fragment:fragment-ktx:1.4.0")
+    // Testing Fragments in Isolation
+    debugImplementation("androidx.fragment:fragment-testing:1.4.0")
     implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
-    implementation "org.mozilla.components:browser-engine-gecko:96.0.8"
-    implementation "org.mozilla.components:feature-session:90.0.9"
-    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation "org.mozilla.geckoview:geckoview:95.0.20211218203254"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

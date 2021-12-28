@@ -6,14 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipeRefreshLayout"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <mozilla.components.concept.engine.EngineView
-            android:id="@+id/engineView"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView2"
+            android:name="co.dothq.browser.Toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+            android:layout_height="wrap_content" />
+
+        <org.mozilla.geckoview.GeckoView
+            android:id="@+id/geckoview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </org.mozilla.geckoview.GeckoView>
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

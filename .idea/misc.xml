@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/drawable/input_layout.xml" value="0.2916666666666667" />
+        <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/layout/fragment_toolbar.xml" value="0.5" />
+        <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/layout/fragment_web_view.xml" value="0.28306159420289856" />
         <entry key="..\:/Users/Ufigh/StudioProjects/DotBrowser/app/src/main/res/layout/activity_main.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/Ufigh/StudioProjects/DotBrowser/app/src/main/res/layout/fragment_webview.xml" value="0.33" />
       </map>
