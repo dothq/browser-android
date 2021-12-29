@@ -29,6 +29,13 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    sourceSets {
+        main {
+            assets {
+                srcDirs 'src\\main\\assets', 'src\\main\\java\\co\\dothq\\browser\\config'
+            }
+        }
+    }
 }
 
 dependencies {
