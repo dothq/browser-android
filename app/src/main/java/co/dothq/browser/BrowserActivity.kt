@@ -1,5 +1,7 @@
 package co.dothq.browser
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +23,8 @@ class BrowserActivity : AppCompatActivity() {
         Log.d("sex","Yes");
         PreferencesManager().init(applicationContext);
         setContentView(R.layout.activity_main);
+
+
     }
 
     fun initStatusbar() {
