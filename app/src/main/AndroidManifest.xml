@@ -10,8 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DotBrowser">
         <activity
-            android:configChanges="orientation|screenSize"
+            android:name=".WelcomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".BrowserActivity"
+            android:configChanges="orientation|screenSize"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

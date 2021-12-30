@@ -21,7 +21,7 @@ class BrowserActivity : AppCompatActivity() {
         this.initStatusbar();
 
         Log.d("sex","Yes");
-        PreferencesManager().init(applicationContext);
+        ApplicationManager().startUp(applicationContext, this);
         setContentView(R.layout.activity_main);
 
 
