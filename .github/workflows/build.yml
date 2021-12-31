@@ -32,14 +32,14 @@ jobs:
           name: apk
           path: app/build/outputs/apk/debug/app-debug.apk 
   release:
-    - name: Set variables
-      run: |
-          VER=$(cat app/src/main/java/co/dothq/browser/config/version.txt)
-          echo "VERSION=$VER" >> $GITHUB_ENV
     name: Release APK
     needs: apk
     runs-on: ubuntu-latest
     steps:
+      - name: Set variables
+      run: |
+          VER=$(cat app/src/main/java/co/dothq/browser/config/version.txt)
+          echo "VERSION=$VER" >> $GITHUB_ENV 
       - name: Download APK from build
         uses: actions/download-artifact@v1
         with:
