@@ -1,4 +1,4 @@
-package co.dothq.browser
+package co.dothq.browser.managers
 
 import android.app.Application
 import android.content.Context

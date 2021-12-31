@@ -14,8 +14,8 @@
         android:foregroundGravity="bottom"
         android:gravity="center"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-60dp">
 
         <TextView
             android:id="@+id/textView"
@@ -38,7 +38,7 @@
             android:text="The privacy-centric, modern web browser that fights for your privacy when browsing the internet."
             android:textAlignment="center"
             android:textColor="?colorSecondary"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
 
         <LinearLayout
             android:id="@+id/startButton"

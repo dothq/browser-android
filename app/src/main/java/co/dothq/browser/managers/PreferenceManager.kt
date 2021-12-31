@@ -1,6 +1,7 @@
-package co.dothq.browser
+package co.dothq.browser.managers
 
 import android.content.Context
+import co.dothq.browser.managers.StorageManager
 
 fun pref(id: String, value: Any, context: Context) {
     PreferencesManager().set(context, id, value)

@@ -1,7 +1,7 @@
 package co.dothq.browser.util
 
 import android.content.Context
-import co.dothq.browser.pref
+import co.dothq.browser.managers.pref
 
 class defaultProfile {
     fun applyDefaultPreferences(context: Context) {

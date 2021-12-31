@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DotBrowser">
         <activity
+            android:name=".subactivities.AddressBar"
+            android:exported="false" />
+        <activity
             android:name=".WelcomeActivity"
             android:exported="false" />
         <activity

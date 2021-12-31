@@ -3,6 +3,7 @@ package co.dothq.browser
 import android.app.Activity
 import android.content.Context
 import android.widget.TextView
+import co.dothq.browser.managers.StorageManager
 import org.mozilla.geckoview.AllowOrDeny
 import org.mozilla.geckoview.GeckoResult
 import org.mozilla.geckoview.GeckoSession

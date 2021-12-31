@@ -1,21 +1,21 @@
 package co.dothq.browser
 
-import android.content.Context
-import android.content.SharedPreferences
-import android.graphics.Color
-import android.os.Build
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.view.WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
+import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import org.mozilla.geckoview.GeckoRuntime;
 import org.mozilla.geckoview.GeckoSession;
 import org.mozilla.geckoview.GeckoView;
-import co.dothq.browser.PreferencesManager;
-import co.dothq.browser.BrowserDelegates
-
+import co.dothq.browser.managers.ApplicationManager
+import co.dothq.browser.managers.PreferencesManager
+import co.dothq.browser.managers.StorageManager
+import co.dothq.browser.subactivities.AddressBar
 
 
 class BrowserActivity : AppCompatActivity() {
@@ -37,9 +37,30 @@ class BrowserActivity : AppCompatActivity() {
         val session = GeckoSession()
         val runtime = GeckoRuntime.create(this)
 
+
         session.open(runtime)
         view.setSession(session)
         session.navigationDelegate = BrowserDelegates().createNavigationDelegate("main", this, applicationContext);
+
+        val addressBar = findViewById<LinearLayout>(R.id.addressBarContainer);
+
+        addressBar.setOnClickListener {
+            val addressBarIntent = Intent(this, AddressBar::class.java);
+
+            addressBarIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+
+            var launchAddressBar = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+                if (result.resultCode == Activity.RESULT_OK) {
+                    val data: Intent? = result.data
+                    if (data != null) {
+                        session.loadUri(data.toString());
+                    }
+                }
+            }
+
+            launchAddressBar.launch(addressBarIntent)
+        }
+
         session.loadUri("https://ddg.gg")
     }
 

@@ -1,11 +1,8 @@
-package co.dothq.browser
+package co.dothq.browser.managers
 
-import android.R.attr
 import android.content.Context
 import android.util.Log
-import android.R.attr.button
-
-
+import co.dothq.browser.managers.PreferencesManager;
 
 
 class ThemeManager {

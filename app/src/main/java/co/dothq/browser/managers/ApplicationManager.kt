@@ -1,14 +1,9 @@
-package co.dothq.browser
+package co.dothq.browser.managers
 
 import android.content.Context
 import android.content.Intent
-import android.util.Log
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
-import co.dothq.browser.util.defaultProfile
 import android.app.Activity
-
-
+import co.dothq.browser.WelcomeActivity
 
 
 class ApplicationManager {
