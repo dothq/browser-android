@@ -22,6 +22,8 @@ jobs:
         run: |
           VER=$(cat app/src/main/java/co/dothq/browser/config/version.txt)
           echo "VERSION=$VER" >> $GITHUB_ENV
+      - name: Echo version
+        run: echo "${{ env.VERSION }}"
       - name: Build APK
         run: bash ./gradlew assembleDebug --stacktrace
       - name: Upload APK
@@ -44,8 +46,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.ROBOT_TOKEN }} 
         with:
-          tag_name: v${{ steps.version.outputs.content }}-${{ github.run_number }} 
-          release_name: Release v${{ steps.version.outputs.content }}-${{ github.run_number }} 
+          tag_name: v${{ env.VERSION }}-${{ github.run_number }} 
+          release_name: Release v${{ env.VERSION }}-${{ github.run_number }} 
       - name: Upload Release APK
         id: upload_release_asset
         uses: actions/upload-release-asset@v1.0.1
@@ -54,5 +56,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: apk/app-debug.apk
-          asset_name: dot-${{ steps.version.outputs.content }}-${{ github.run_number }}-${{ github.ref }}-arm64.apk
+          asset_name: dot-${{ env.VERSION }}-${{ github.run_number }}-${{ github.ref }}-arm64.apk
           asset_content_type: application/zip
