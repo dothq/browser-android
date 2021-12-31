@@ -18,9 +18,10 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-      - name: Read version file
-        id: getversion
-        run: echo "::set-output name=version::$(cat app/src/main/java/co/dothq/browser/config/version.txt)"
+      - name: Set variables
+        run: |
+          VER=$(cat app/src/main/java/co/dothq/browser/config/version.txt)
+          echo "VERSION=$VER" >> $GITHUB_ENV
       - name: Build APK
         run: bash ./gradlew assembleDebug --stacktrace
       - name: Upload APK
