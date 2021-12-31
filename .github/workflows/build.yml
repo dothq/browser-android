@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set variables
-      run: |
+        run: |
           VER=$(cat app/src/main/java/co/dothq/browser/config/version.txt)
           echo "VERSION=$VER" >> $GITHUB_ENV 
       - name: Download APK from build
