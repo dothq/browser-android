@@ -38,7 +38,7 @@ jobs:
         id: version
         uses: juliangruber/read-file-action@v1
         with:
-          path: ./app/src/main/java/co/dothq/browser/config/version.txt
+          path: app/src/main/java/co/dothq/browser/config/version.txt
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
