@@ -36,6 +36,8 @@ jobs:
     needs: apk
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v1
       - name: Set variables
         run: |
           VER=$(cat app/src/main/java/co/dothq/browser/config/version.txt)
