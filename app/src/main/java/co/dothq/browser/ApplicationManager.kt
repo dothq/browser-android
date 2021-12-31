@@ -12,16 +12,18 @@ import android.app.Activity
 
 
 class ApplicationManager {
-    fun startUp(context: Context, thisContext: Context) {
+    fun init(context: Context, thisContext: Context) {
+        ThemeManager().init(context);
+
         val appSetup = StorageManager().get(context, "setup", "appValues", false);
+
         if (appSetup == false) {
-            Toast.makeText(context, "App Not Setup", Toast.LENGTH_SHORT).show()
             val welcomeIntent = Intent(thisContext, WelcomeActivity::class.java);
-            welcomeIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+
+            welcomeIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             thisContext.startActivity(welcomeIntent);
-            (thisContext as Activity).finish()
-        } else {
-            Toast.makeText(context, "App Setup!", Toast.LENGTH_SHORT).show()
+
+            return (thisContext as Activity).finish();
         }
     }
 }
