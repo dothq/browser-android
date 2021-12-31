@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - nightly
-    tags:
-      - 'v*'
 
 jobs: 
   apk:
