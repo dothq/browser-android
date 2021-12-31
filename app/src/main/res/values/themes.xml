@@ -16,4 +16,5 @@
 
     </style>
     <string name="mode">Day</string>
+    <color name="colorPrimaryVariantDark">@color/gray_4</color>
 </resources>

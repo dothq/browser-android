@@ -7,9 +7,11 @@
     tools:context=".WelcomeActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="?colorPrimary"
+        android:foregroundGravity="bottom"
         android:gravity="center"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="1dp"
@@ -19,11 +21,24 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10sp"
             android:text="Dot Browser"
             android:textAlignment="center"
             android:textColor="?colorSecondary"
             android:textSize="27sp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10sp"
+            android:paddingStart="20sp"
+            android:paddingEnd="20sp"
+            android:text="The privacy-centric, modern web browser that fights for your privacy when browsing the internet."
+            android:textAlignment="center"
+            android:textColor="?colorSecondary"
+            android:textSize="16sp" />
 
         <LinearLayout
             android:id="@+id/startButton"
@@ -45,12 +60,24 @@
                 android:textColor="@color/white" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="// Todo: this welcome screen"
-            android:textAlignment="center"
-            android:textColor="?colorSecondary" />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/copyrightText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="© 2021 Dot HQ"
+            android:textAlignment="center" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

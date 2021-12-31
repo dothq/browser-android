@@ -5,12 +5,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.LinearLayout
+import android.widget.TextView
 import co.dothq.browser.util.defaultProfile
+import java.util.*
 
 class WelcomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome)
+
+        val year = Calendar.getInstance().get(Calendar.YEAR);
+
+        val copyrightInfo = findViewById<TextView>(R.id.copyrightText)
+
+        copyrightInfo.text = "© ${year.toString()} Dot HQ"
 
         val startButton = findViewById<LinearLayout>(R.id.startButton)
         startButton.setOnClickListener {
