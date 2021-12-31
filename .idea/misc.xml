@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/drawable/button_prim.xml" value="0.2078125" />
+        <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/drawable/button_primary.xml" value="0.24635416666666668" />
+        <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/drawable/button_primary_pressed.xml" value="0.2078125" />
         <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/drawable/input_layout.xml" value="0.2916666666666667" />
-        <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/font/inter.xml" value="0.221875" />
+        <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/layout/activity_welcome.xml" value="0.33" />
         <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/layout/fragment_toolbar.xml" value="0.5" />
         <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/layout/fragment_web_view.xml" value="0.28306159420289856" />

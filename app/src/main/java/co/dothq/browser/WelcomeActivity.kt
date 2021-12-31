@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.LinearLayout
 import co.dothq.browser.util.defaultProfile
 
 class WelcomeActivity : AppCompatActivity() {
@@ -11,7 +12,7 @@ class WelcomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome)
 
-        val startButton = findViewById<Button>(R.id.startButton)
+        val startButton = findViewById<LinearLayout>(R.id.startButton)
         startButton.setOnClickListener {
             defaultProfile().applyDefaultPreferences(applicationContext);
             StorageManager().set(applicationContext, "setup", true, "appValues");
