@@ -18,8 +18,9 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-      - name: ls
-        run: ls
+      - name: Read version file
+        id: getversion
+        run: echo "::set-output name=version::$(cat app/src/main/java/co/dothq/browser/config/version.txt)"
       - name: Build APK
         run: bash ./gradlew assembleDebug --stacktrace
       - name: Upload APK
@@ -36,11 +37,6 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: apk  
-      - name: Get version number
-        id: version
-        uses: juliangruber/read-file-action@v1
-        with:
-          path: /home/runner/work/browser-android/browser-android/app/src/main/java/co/dothq/browser/config/version.txt
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
