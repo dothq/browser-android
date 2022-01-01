@@ -39,7 +39,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/websiteSecurityIdentifier"
+                        android:id="@+id/contextIdentityIcon"
                         android:layout_width="14dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"

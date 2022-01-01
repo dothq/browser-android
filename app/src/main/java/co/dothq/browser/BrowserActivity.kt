@@ -41,6 +41,8 @@ class BrowserActivity : AppCompatActivity() {
         session.open(runtime)
         view.setSession(session)
         session.navigationDelegate = BrowserDelegates().createNavigationDelegate("main", this, applicationContext);
+        session.progressDelegate = BrowserDelegates().createProgressDelegate("main", this, applicationContext);
+
 
         val addressBar = findViewById<LinearLayout>(R.id.addressBarContainer);
 
