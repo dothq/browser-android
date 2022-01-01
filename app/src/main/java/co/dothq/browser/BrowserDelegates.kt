@@ -22,9 +22,17 @@ class BrowserDelegates {
 
                     if (uriNoProtocol.startsWith("www.")) uriNoProtocol = uriNoProtocol.replace("www.", "");
 
-                    if (area == "main") {
-                        val activity: Activity = (context as Activity)
-                        activity.findViewById<TextView>(R.id.addressBarUri).text = uriNoProtocol.toString()
+                    var uriSplitBySlash = uriNoProtocol.split("/");
+                    var uriJustHostname = uriSplitBySlash[0];
+                    var path = uriSplitBySlash.drop(1).joinToString("/");
+
+                if (area == "main") {
+                    val activity: Activity = (context as Activity)
+
+                    activity.findViewById<TextView>(R.id.addressBarDomain).text = uriJustHostname.toString();
+
+                    if (path != "") activity.findViewById<TextView>(R.id.addressBarPath).text = "/${path.toString()}";
+                    if (path == "") activity.findViewById<TextView>(R.id.addressBarPath).text = path.toString()
                     }
                     return (GeckoResult.allow())
             }
