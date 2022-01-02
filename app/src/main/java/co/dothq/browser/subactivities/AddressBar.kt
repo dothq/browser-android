@@ -1,10 +1,12 @@
 package co.dothq.browser.subactivities
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +17,7 @@ import co.dothq.browser.managers.StorageManager
 class AddressBar : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        this.initStatusbar()
         setContentView(R.layout.activity_address_bar)
         val uri :String = intent.getStringExtra("currentURI").toString();
 
@@ -22,6 +25,10 @@ class AddressBar : AppCompatActivity() {
         editBox.setText(uri);
 
         editBox.requestFocus();
+        val imm = getSystemService(
+            INPUT_METHOD_SERVICE
+        ) as InputMethodManager
+        imm.showSoftInput(editBox, 0)
         editBox.selectAll()
 
         editBox.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
@@ -51,5 +58,14 @@ class AddressBar : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
         overridePendingTransition(0, 0)
+    }
+
+    fun initStatusbar() {
+        if (resources.getString(R.string.mode) == "Day") {
+            getWindow().getDecorView()
+                .setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        } else {
+
+        }
     }
 }

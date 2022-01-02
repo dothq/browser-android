@@ -30,6 +30,7 @@
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
                 android:hint="@string/SEARCH_OR_ENTER_URL_TEXT"
+                android:inputType="textUri"
                 android:lines="1"
                 android:minLines="1"
                 android:paddingStart="5dp"
@@ -46,7 +47,8 @@
             android:layout_marginLeft="11dp"
             android:background="@drawable/invisible_button"
             android:orientation="vertical"
-            android:padding="5sp">
+            android:padding="5sp"
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="20dp"

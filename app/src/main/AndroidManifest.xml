@@ -11,6 +11,7 @@
         android:theme="@style/Theme.DotBrowser">
         <activity
             android:name=".subactivities.AddressBar"
+            android:windowSoftInputMode="stateVisible"
             android:exported="false" />
         <activity
             android:name=".WelcomeActivity"
