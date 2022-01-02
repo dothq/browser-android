@@ -5,16 +5,20 @@
       <map>
         <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/drawable/button_prim.xml" value="0.2078125" />
         <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/drawable/button_primary.xml" value="0.24635416666666668" />
+        <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/drawable/button_primary_normal.xml" value="0.2546875" />
         <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/drawable/button_primary_pressed.xml" value="0.2078125" />
         <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/drawable/ic_secure_filled.xml" value="0.3296296296296296" />
         <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/drawable/ic_unsecure_filled.xml" value="0.28229166666666666" />
         <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/drawable/input_layout.xml" value="0.2916666666666667" />
         <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/drawable/input_layout_normal.xml" value="0.24444444444444444" />
         <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/drawable/input_layout_pressed.xml" value="0.2421875" />
+        <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/drawable/invisible_button.xml" value="1.2642857142857142" />
+        <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/drawable/invisible_button_normal.xml" value="0.2546875" />
+        <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/drawable/invisible_button_pressed.xml" value="0.2546875" />
         <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/drawable/tab_icon.xml" value="0.24444444444444444" />
         <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/font/inter.xml" value="0.221875" />
-        <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/layout/activity_address_bar.xml" value="0.3532608695652174" />
-        <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/layout/activity_main.xml" value="0.579476861167002" />
+        <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/layout/activity_address_bar.xml" value="0.5121731289449954" />
+        <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/layout/activity_main.xml" value="0.75" />
         <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/layout/activity_welcome.xml" value="0.5" />
         <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/layout/fragment_toolbar.xml" value="0.5" />
         <entry key="..\:/Ejaz/Documents/REPOSITORIES/browser-android/app/src/main/res/layout/fragment_web_view.xml" value="0.28306159420289856" />

@@ -21,7 +21,6 @@ import co.dothq.browser.subactivities.AddressBar
 class BrowserActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState);
-
         this.initStatusbar();
 
         ApplicationManager().init(applicationContext, this);
@@ -43,6 +42,15 @@ class BrowserActivity : AppCompatActivity() {
         session.navigationDelegate = BrowserDelegates().createNavigationDelegate("main", this, applicationContext);
         session.progressDelegate = BrowserDelegates().createProgressDelegate("main", this, applicationContext);
 
+        var addressBarLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                // There are no request codes
+                val data: Intent? = result.data
+
+                session.loadUri(data?.getStringExtra("targetURI").toString())
+            }
+        }
+
 
         val addressBar = findViewById<LinearLayout>(R.id.addressBarContainer);
 
@@ -50,17 +58,9 @@ class BrowserActivity : AppCompatActivity() {
             val addressBarIntent = Intent(this, AddressBar::class.java);
 
             addressBarIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-
-            var launchAddressBar = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-                if (result.resultCode == Activity.RESULT_OK) {
-                    val data: Intent? = result.data
-                    if (data != null) {
-                        session.loadUri(data.toString());
-                    }
-                }
-            }
-
-            launchAddressBar.launch(addressBarIntent)
+            addressBarIntent.putExtra("currentURI", StorageManager().get(applicationContext, "currentUri", "appValues", "about:blank").toString())
+            addressBarLauncher.launch(addressBarIntent)
+            overridePendingTransition(0, 0);
         }
 
         session.loadUri("https://ddg.gg")

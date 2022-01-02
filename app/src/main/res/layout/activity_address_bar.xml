@@ -6,4 +6,57 @@
     android:layout_height="match_parent"
     tools:context=".subactivities.AddressBar">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:background="?colorPrimary"
+        android:orientation="horizontal"
+        android:paddingStart="16sp"
+        android:paddingTop="5sp"
+        android:paddingEnd="16sp"
+        android:paddingBottom="5sp">
+
+        <LinearLayout
+            android:id="@+id/addressBarContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/input_layout"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/urlEnterBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:hint="@string/SEARCH_OR_ENTER_URL_TEXT"
+                android:lines="1"
+                android:minLines="1"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:textSize="14sp"></EditText>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/closeAddressBarButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="11dp"
+            android:background="@drawable/invisible_button"
+            android:orientation="vertical"
+            android:padding="5sp">
+
+            <LinearLayout
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:alpha="0.9"
+                android:background="@drawable/tab_icon"
+                android:gravity="center"
+                android:orientation="vertical" />
+        </LinearLayout>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

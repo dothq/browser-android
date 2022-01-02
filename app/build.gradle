@@ -40,6 +40,9 @@ android {
 
 dependencies {
     def lifecycle_version = "2.2.0"
+    def ff_version = "95.0"
+    def gecko_version = "$ff_version.20211218203254"
+
 
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
@@ -51,7 +54,8 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
-    implementation "org.mozilla.geckoview:geckoview:95.0.20211218203254"
+    implementation "org.mozilla.geckoview:geckoview:$gecko_version"
+    implementation "org.mozilla.components:browser-icons:$ff_version.0"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

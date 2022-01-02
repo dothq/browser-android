@@ -1,12 +1,55 @@
 package co.dothq.browser.subactivities
 
-import androidx.appcompat.app.AppCompatActivity
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
+import android.view.KeyEvent
+import android.view.View
+import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import co.dothq.browser.R
+import co.dothq.browser.managers.StorageManager
+
 
 class AddressBar : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_address_bar)
+        val uri :String = intent.getStringExtra("currentURI").toString();
+
+        val editBox = findViewById<EditText>(R.id.urlEnterBox);
+        editBox.setText(uri);
+
+        editBox.requestFocus();
+        editBox.selectAll()
+
+        editBox.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
+            if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
+
+                var text = editBox.text.toString();
+                if (text.trim() == "") {
+                    setResult(Activity.RESULT_CANCELED)
+                    finish()
+                    overridePendingTransition(0, 0)
+                } else {
+
+                    val data = Intent()
+                    data.putExtra("targetURI", text.trim());
+                    // more handling here
+                    setResult(Activity.RESULT_OK, data);
+                    finish()
+                    overridePendingTransition(0, 0)
+                }
+                return@OnKeyListener true
+            }
+            false
+        })
+
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(0, 0)
     }
 }
