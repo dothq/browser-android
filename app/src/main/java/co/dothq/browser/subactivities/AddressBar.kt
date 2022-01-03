@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
+import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
@@ -25,10 +26,7 @@ class AddressBar : AppCompatActivity() {
         editBox.setText(uri);
 
         editBox.requestFocus();
-        val imm = getSystemService(
-            INPUT_METHOD_SERVICE
-        ) as InputMethodManager
-        imm.showSoftInput(editBox, 0)
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
         editBox.selectAll()
 
         editBox.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->

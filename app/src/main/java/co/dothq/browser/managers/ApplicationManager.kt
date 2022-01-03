@@ -21,4 +21,8 @@ class ApplicationManager {
             return (thisContext as Activity).finish();
         }
     }
+
+    fun initBrowserRuntime() {
+
+    }
 }

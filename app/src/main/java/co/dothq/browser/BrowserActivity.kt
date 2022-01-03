@@ -36,7 +36,6 @@ class BrowserActivity : AppCompatActivity() {
         val session = GeckoSession()
         val runtime = GeckoRuntime.create(this)
 
-
         session.open(runtime)
         view.setSession(session)
         session.navigationDelegate = BrowserDelegates().createNavigationDelegate("main", this, applicationContext);
