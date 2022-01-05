@@ -5,10 +5,13 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import co.dothq.browser.managers.ApplicationManager
 import co.dothq.browser.managers.PreferencesManager
 import co.dothq.browser.managers.StorageManager
@@ -35,11 +38,12 @@ class BrowserActivity : AppCompatActivity() {
 
         if (appSetup == false) return;
         val view = findViewById<GeckoView>(R.id.geckoview)
-        val session = GeckoSession()
         val runtime = GeckoRuntime.getDefault(this)
+        val session = GeckoSession()
 
         session.open(runtime)
         view.setSession(session)
+
         session.navigationDelegate = BrowserDelegates().createNavigationDelegate("main", this, applicationContext);
         session.progressDelegate = BrowserDelegates().createProgressDelegate("main", this, applicationContext);
 
@@ -48,7 +52,17 @@ class BrowserActivity : AppCompatActivity() {
                 // There are no request codes
                 val data: Intent? = result.data
 
-                session.loadUri(data?.getStringExtra("targetURI").toString())
+                val url = data?.getStringExtra("targetURI")?.toUri();
+
+                val host = url?.host.toString();
+                val path = url.toString().replace("${url?.scheme}://${url?.host}", "");
+
+                findViewById<TextView>(R.id.addressBarDomain).text = host.toString();
+
+                if (path != "/") findViewById<TextView>(R.id.addressBarPath).text = path
+                if (path == "/") findViewById<TextView>(R.id.addressBarPath).text = ""
+
+                session.loadUri(url.toString())
             }
         }
 
@@ -57,6 +71,7 @@ class BrowserActivity : AppCompatActivity() {
 
         addressBar.setOnClickListener {
             val addressBarIntent = Intent(this, AddressBar::class.java);
+            val contextualIdentityIcon = findViewById<ImageView>(R.id.contextIdentityIcon);
 
             addressBarIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             addressBarIntent.putExtra("currentURI", StorageManager().get(applicationContext, "currentUri", "appValues", "about:blank").toString())
@@ -73,6 +88,11 @@ class BrowserActivity : AppCompatActivity() {
         } catch (e: Exception) {
             session.loadUri("https://ddg.gg")
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
     }
 
     fun initStatusbar() {

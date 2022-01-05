@@ -24,11 +24,14 @@ class BrowserDelegates {
 
                 if (area == "main") {
                     val activity: Activity = (context as Activity)
-                    val contextualIdIcon = activity.findViewById<ImageView>(R.id.contextIdentityIcon);
+                    val contextualIdIcon = activity.findViewById<ImageView>(R.id.contextIdentityIcon)
+
+
 
                     if (securityInfo.isSecure) contextualIdIcon.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.ic_secure_filled))
                     if (!securityInfo.isSecure) contextualIdIcon.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.ic_unsecure_filled))
-                    Toast.makeText(context, securityInfo.securityMode.toString(), Toast.LENGTH_LONG).show()
+
+                    StorageManager().set(applicationCtx, "contextualIdentity", securityInfo.isSecure, "appValues");
                 }
             }
 
@@ -45,6 +48,7 @@ class BrowserDelegates {
 
     public fun createNavigationDelegate(area: String, context: Context, applicationCtx: Context): GeckoSession.NavigationDelegate {
         return object : GeckoSession.NavigationDelegate {
+            var canGoBack = false
 
             override fun onLocationChange(session: GeckoSession, url: String?) {
                 super.onLocationChange(session, url)
@@ -67,12 +71,22 @@ class BrowserDelegates {
 
                     if (path != "/") activity.findViewById<TextView>(R.id.addressBarPath).text = path
                     if (path == "/") activity.findViewById<TextView>(R.id.addressBarPath).text = ""
+
+                    if (path == "about:blank") {
+                        activity.findViewById<TextView>(R.id.addressBarDomain).text = ""
+                        activity.findViewById<TextView>(R.id.addressBarPath).text = ""
+                    }
                 }
             }
 
             override fun onLoadRequest(session: GeckoSession, request: GeckoSession.NavigationDelegate.LoadRequest): GeckoResult<AllowOrDeny>? {
+
+                val activity: Activity = (context as Activity)
+                val contextualIdIcon = activity.findViewById<ImageView>(R.id.contextIdentityIcon)
+                contextualIdIcon.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.ic_globe))
                 return (GeckoResult.allow())
             }
+
             }
         }
     }

@@ -45,8 +45,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:alpha="0.8"
-                        app:srcCompat="@drawable/ic_secure_filled"
-                        app:tint="?attr/colorOnSecondary" />
+                        app:srcCompat="@drawable/ic_secure_filled" />
                 </LinearLayout>
 
                 <TextView
@@ -59,7 +58,6 @@
                     android:lines="1"
                     android:maxLines="1"
                     android:minLines="1"
-                    android:text="hostname/"
                     android:textAlignment="viewStart"
                     android:textColor="?colorSecondary"
                     android:visibility="visible" />
@@ -76,7 +74,6 @@
                     android:maxLines="1"
                     android:minLines="1"
                     android:paddingEnd="5sp"
-                    android:text="path"
                     android:textAlignment="viewStart"
                     android:textColor="?colorSecondary"
                     app:autoSizeTextType="none" />

@@ -18,7 +18,6 @@ class StorageManager {
 
         val type = typePreferences.getString(id, null);
 
-        Log.d("sex", "${type} (${id})")
         if (type == "String") {
             return preferences.getString(id, null) ?: defaultValue;
         }
@@ -28,7 +27,6 @@ class StorageManager {
         }
 
         if (type == "Boolean") {
-            Log.d("sex", preferences.getBoolean(id, false).toString())
             return preferences.getBoolean(id, false) ?: defaultValue;
         }
 

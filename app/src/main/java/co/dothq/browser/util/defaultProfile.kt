@@ -22,6 +22,8 @@ class defaultProfile {
 
 // dot.newtab
         pref("dot.newtab.enabled", true, context)
-        pref("dot.newtab.urls", "about:home", context) // accepts a single URL or urls split by |
+        pref("dot.newtab.urls", "about:home", context)
+        pref("dot.search.engine_id", "ddg@search.dothq.co", context);
+
     }
 }
