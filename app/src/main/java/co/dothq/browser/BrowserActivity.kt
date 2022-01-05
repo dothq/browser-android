@@ -2,20 +2,22 @@ package co.dothq.browser
 
 import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.Toast
-import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import org.mozilla.geckoview.GeckoRuntime;
-import org.mozilla.geckoview.GeckoSession;
-import org.mozilla.geckoview.GeckoView;
+import androidx.appcompat.app.AppCompatActivity
 import co.dothq.browser.managers.ApplicationManager
 import co.dothq.browser.managers.PreferencesManager
 import co.dothq.browser.managers.StorageManager
 import co.dothq.browser.subactivities.AddressBar
+import org.mozilla.geckoview.GeckoRuntime
+import org.mozilla.geckoview.GeckoSession
+import org.mozilla.geckoview.GeckoView
+import java.net.MalformedURLException
+import java.net.URL
 
 
 class BrowserActivity : AppCompatActivity() {
@@ -62,7 +64,15 @@ class BrowserActivity : AppCompatActivity() {
             overridePendingTransition(0, 0);
         }
 
-        session.loadUri("https://ddg.gg")
+
+        try {
+            val intent = intent
+            val uri: Uri? = intent.data
+            val url = URL(uri?.getScheme(), uri?.getHost(), uri?.getPath())
+            session.loadUri(url.toString())
+        } catch (e: Exception) {
+            session.loadUri("https://ddg.gg")
+        }
     }
 
     fun initStatusbar() {
