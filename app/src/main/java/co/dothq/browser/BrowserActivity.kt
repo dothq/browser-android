@@ -36,7 +36,7 @@ class BrowserActivity : AppCompatActivity() {
         if (appSetup == false) return;
         val view = findViewById<GeckoView>(R.id.geckoview)
         val session = GeckoSession()
-        val runtime = GeckoRuntime.create(this)
+        val runtime = GeckoRuntime.getDefault(this)
 
         session.open(runtime)
         view.setSession(session)
