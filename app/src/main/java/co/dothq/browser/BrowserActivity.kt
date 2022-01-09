@@ -115,10 +115,19 @@ class BrowserActivity : AppCompatActivity() {
     }
 
     fun deepLinkActivitySetup() {
-        val deepLinkCloseButton = findViewById<LinearLayout>(R.id.closeButtonDeeplink);
+        val deeplinkHeader = findViewById<LinearLayout>(R.id.deeplinkAddressBar);
+        val browserHeader = findViewById<LinearLayout>(R.id.normalAddressbar);
 
-        deepLinkCloseButton.setOnClickListener {
+        val deeplinkCloseButton = findViewById<LinearLayout>(R.id.closeButtonDeeplink);
+        val deeplinkOpenInBrowserButton = findViewById<LinearLayout>(R.id.openInBrowserButtonDeeplink);
+
+        deeplinkCloseButton.setOnClickListener {
             finish()
+        }
+
+        deeplinkOpenInBrowserButton.setOnClickListener {
+            browserHeader.visibility = View.VISIBLE;
+            deeplinkHeader.visibility = View.GONE;
         }
     }
 }

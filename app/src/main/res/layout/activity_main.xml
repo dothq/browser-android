@@ -93,6 +93,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/openInBrowserButtonDeeplink"
                     android:layout_width="40dp"
                     android:layout_height="match_parent"
                     android:layout_margin="2dp"
