@@ -1,4 +1,4 @@
-name: Build Android APK
+name: Build
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - nightly
 
 jobs: 
-  apk:
+  build:
     name: Generate APK
     runs-on: ubuntu-latest
     steps:
