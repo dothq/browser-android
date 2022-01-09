@@ -5,10 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
@@ -79,13 +76,26 @@ class BrowserActivity : AppCompatActivity() {
             overridePendingTransition(0, 0);
         }
 
+        val deeplinkHeader = findViewById<LinearLayout>(R.id.deeplinkAddressBar);
+        val browserHeader = findViewById<LinearLayout>(R.id.normalAddressbar);
 
         try {
             val intent = intent
             val uri: Uri? = intent.data
+            browserHeader.visibility = View.GONE;
+            deeplinkHeader.visibility = View.VISIBLE;
+
+            if (uri.toString() == "") {
+                browserHeader.visibility = View.VISIBLE;
+                deeplinkHeader.visibility = View.GONE;
+            }
             val url = URL(uri?.getScheme(), uri?.getHost(), uri?.getPath())
             session.loadUri(url.toString())
+            deepLinkActivitySetup()
+
         } catch (e: Exception) {
+            browserHeader.visibility = View.VISIBLE;
+            deeplinkHeader.visibility = View.GONE;
             session.loadUri("https://ddg.gg")
         }
     }
@@ -101,6 +111,14 @@ class BrowserActivity : AppCompatActivity() {
                 .setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         } else {
 
+        }
+    }
+
+    fun deepLinkActivitySetup() {
+        val deepLinkCloseButton = findViewById<LinearLayout>(R.id.closeButtonDeeplink);
+
+        deepLinkCloseButton.setOnClickListener {
+            finish()
         }
     }
 }
