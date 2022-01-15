@@ -16,7 +16,6 @@ import co.dothq.browser.subactivities.AddressBar
 import org.mozilla.geckoview.GeckoRuntime
 import org.mozilla.geckoview.GeckoSession
 import org.mozilla.geckoview.GeckoView
-import java.net.MalformedURLException
 import java.net.URL
 
 
