@@ -1,15 +1,3 @@
-import org.gradle.api.initialization.resolve.RepositoriesMode
-
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
-    repositories {
-        google()
-        mavenCentral()
-        maven {
-            url "https://maven.mozilla.org/maven2"
-        }
-        //jcenter() // Warning: this repository is going to shut down soon
-    }
-}
-rootProject.name = "Dot Browser"
+rootProject.name = 'browser'
+apply from: file("./node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 include ':app'
