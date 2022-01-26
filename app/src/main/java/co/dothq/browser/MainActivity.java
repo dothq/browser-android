@@ -1,4 +1,4 @@
-package com.browser;
+package co.dothq.browser;
 
 import com.facebook.react.ReactActivity;
 
