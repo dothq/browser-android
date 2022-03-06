@@ -1,4 +1,4 @@
-# Dot Browser Desktop
+# Dot Browser Android
 
 The same privacy browser you all know and love, now on Android. Based on [GeckoView](https://mozilla.github.io/geckoview).
 
@@ -26,6 +26,6 @@ Get support or chat with members of the community on:
 
 ## License
 
-Dot Browser for Desktop is licensed under the Mozilla Public License 2.0.
+Dot Browser for Android is licensed under the Mozilla Public License 2.0.
 
 Mozilla, Firefox and the Firefox logo are trademarks of the Mozilla Foundation in the U.S. and other countries.
