@@ -13,7 +13,7 @@ Follow [@DotBrowser](https://twitter.com/DotBrowser) or [join our Discord](https
 * [Roadmap](https://github.com/orgs/dothq/projects/7/views/1)
 * [Documentation](https://docs.dothq.co)
 * [Issues](https://github.com/dothq/browser/issues)
-* [Releases](https://github.com/dothq/browser-android/latest)
+* [Releases](https://github.com/dothq/browser-android/releases/latest)
 
 ## Community
 
