@@ -1,5 +1,7 @@
 # Dot Browser Android
 
+> This project has been archived while we get things working over at [dothq/browser-desktop](https://github.com/dothq/browser-desktop). Once we're in a position to work on an Android app, we'll unarchive this and get back to work.
+
 The same privacy browser you all know and love, now on Android. Based on [GeckoView](https://mozilla.github.io/geckoview).
 
 Follow [@DotBrowser](https://twitter.com/DotBrowser) or [join our Discord](https://discord.gg/WRDEK2D) for important updates.
